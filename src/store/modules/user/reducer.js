@@ -1,13 +1,13 @@
 const initialState = {
-    todos: []
+    users: []
 }
 
 export default function todo(state = initialState, action) {
     switch (action.type) {
-        case 'ADD_TO_DO':
+        case 'SAVE_USERS':
             return {
                 ...state,
-                todos: [...state.todos, action.todo]
+                users: action.users
             }
         default:
             return state;
