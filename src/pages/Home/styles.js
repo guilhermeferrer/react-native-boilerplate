@@ -26,13 +26,13 @@ export const Button = styled(RectButton)`
     align-items: center;
 `;
 
-export const Scroll = styled.ScrollView`
+export const Scroll = styled.ScrollView.attrs(props => ({
+    ...props,
+    contentContainerStyle: {
+        paddingVertical: 15
+    }
+}))`
     width: 80%;
-`;
-
-export const Todo = styled.Text`
-    margin-top: 10px;
-    width: 100%;
 `;
 
 export const ButtonText = styled.Text`

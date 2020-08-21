@@ -5,6 +5,8 @@ import { Container, Input, Button, ButtonText, Scroll, Todo } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../../store/modules/user/action';
 
+import UserCard from '../../components/UserCard';
+
 export default function Home() {
 
     const [name, setName] = useState();
@@ -14,18 +16,20 @@ export default function Home() {
     return (
         <Container>
             <Input
-                placeholder='Search a user'
+                placeholder='Search for a github user'
                 onChangeText={setName}
             />
             <Button
                 onPress={() => dispatch(getUser(name))}
             >
-                <ButtonText>Add</ButtonText>
+                <ButtonText>Search</ButtonText>
             </Button>
             <Scroll>
                 {
                     users.map((user, index) => (
-                        <Todo key={index}>• {user.login}</Todo>
+                        <UserCard user={user} key={index}>
+
+                        </UserCard>
                     ))
                 }
             </Scroll>

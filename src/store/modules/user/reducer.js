@@ -7,7 +7,7 @@ export default function todo(state = initialState, action) {
         case 'SAVE_USERS':
             return {
                 ...state,
-                users: action.users
+                users: [...state.users, ...action.users]
             }
         default:
             return state;
