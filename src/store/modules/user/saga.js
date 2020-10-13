@@ -2,6 +2,7 @@ import { takeLatest, put, all } from 'redux-saga/effects';
 import { saveUsers } from './action';
 
 function* getUserSuccess({ response }) {
+    console.log(response.data);
     yield put(saveUsers(response.data));
     console.log(response.data);
 }
